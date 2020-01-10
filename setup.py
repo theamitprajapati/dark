@@ -10,7 +10,7 @@ db = connection.cursor()
 
 @app.route('/')
 def home():	
-	db.execute('select * from users')
+	db.execute('select * from users')cd flas
 	rows = db.fetchall()
 	return render_template('index.html',rows=rows)
 

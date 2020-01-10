@@ -27,10 +27,20 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def login():
-        return render_template('login.html')
-        
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+        return render_template('auth/login.html')
 
+        
+        # a simple page that says hello
+    @app.route('/forget-password')
+    def forget_password():
+        return render_template('auth/forgot-password.html')
+
+        # a simple page that says hello
+    @app.route('/sing-up')
+    def sing_up():
+        return render_template('auth/sign-up.html')
+        
+    @app.route('/dashboard')
+    def dashboard():
+        return render_template('admin/dashboard.html')
     return app
