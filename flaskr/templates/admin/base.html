@@ -48,9 +48,9 @@
         type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
-    <link rel="stylesheet" href="statis/css/lib/getmdl-select.min.css">
-    <link rel="stylesheet" href="statis/css/lib/nv.d3.min.css">
-    <link rel="stylesheet" href="statis/css/application.min.css">
+    <link rel="stylesheet" href="static/css/lib/getmdl-select.min.css">
+    <link rel="stylesheet" href="static/css/lib/nv.d3.min.css">
+    <link rel="stylesheet" href="static/css/application.css">
     <!-- endinject -->
 
 </head>
@@ -198,7 +198,7 @@
 
                 <div class="avatar-dropdown" id="icon">
                     <span>Luke</span>
-                    <img src="images/Icon_header.png">
+                    <img src="static/images/Icon_header.png">
                 </div>
                 <!-- Account dropdawn-->
                 <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
@@ -274,9 +274,13 @@
                 <div class="scroller" id="scroller">
                     <div class="scroll__container" id="scroll__container">
                         <nav class="mdl-navigation">
-                            <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
+                            <a class="mdl-navigation__link mdl-navigation__link--current" href="/dashboard">
                                 <i class="material-icons" role="presentation">dashboard</i>
                                 Dashboard
+                            </a>
+                            <a class="mdl-navigation__link" href="/etenders">
+                                <i class="material-icons">card_giftcard</i>
+                                eList
                             </a>
                             <div class="sub-navigation">
                                 <a class="mdl-navigation__link">
@@ -324,6 +328,7 @@
                                 <i class="material-icons">multiline_chart</i>
                                 Charts
                             </a>
+
                             <div class="sub-navigation">
                                 <a class="mdl-navigation__link">
                                     <i class="material-icons">pages</i>
@@ -362,27 +367,25 @@
         <div class="flash">{{ message }}</div>
         {% endfor %}
         {% block content %}{% endblock %}
-
     </div>
 
     <!-- inject:js -->
-    <script src="statis/js/d3.min.js"></script>
-    <script src="statis/js/getmdl-select.min.js"></script>
-    <script src="statis/js/material.min.js"></script>
-    <script src="statis/js/nv.d3.min.js"></script>
-    <script src="statis/js/layout/layout.min.js"></script>
-    <script src="statis/js/scroll/scroll.min.js"></script>
-    <script src="statis/js/widgets/charts/linePlusBarChart.min.js"></script>
-    <script src="statis/js/widgets/charts/discreteBarChart.min.js"></script>
-    <script src="statis/js/widgets/charts/stackedBarChart.min.js"></script>
-    <script src="statis/js/widgets/employer-form/employer-form.min.js"></script>
-    <script src="statis/js/widgets/line-chart/line-charts-nvd3.min.js"></script>
-    <script src="statis/js/widgets/map/maps.min.js"></script>
-    <script src="statis/js/widgets/pie-chart/pie-charts-nvd3.min.js"></script>
-    <script src="statis/js/widgets/table/table.min.js"></script>
-    <script src="statis/js/widgets/todo/todo.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="static/js/d3.min.js"></script>
+    <script src="static/js/getmdl-select.min.js"></script>
+    <script src="static/js/material.min.js"></script>
+    <script src="static/js/nv.d3.min.js"></script>
+    <script src="static/js/layout/layout.min.js"></script>
+    <script src="static/js/scroll/scroll.min.js"></script>
+    <script src="static/js/widgets/charts/linePlusBarChart.min.js"></script>
+    <script src="static/js/widgets/charts/discreteBarChart.min.js"></script>
+    <script src="static/js/widgets/charts/stackedBarChart.min.js"></script>
+    <script src="static/js/widgets/employer-form/employer-form.min.js"></script>
+    <script src="static/js/widgets/line-chart/line-charts-nvd3.min.js"></script>
+    <script src="static/js/widgets/map/maps.min.js"></script>
+    <script src="static/js/widgets/pie-chart/pie-charts-nvd3.min.js"></script>
+    <script src="static/js/widgets/table/table.min.js"></script>
+    <script src="static/js/widgets/todo/todo.min.js"></script>
     <!-- endinject -->
-
 </body>
-
 </html>

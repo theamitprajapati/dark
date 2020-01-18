@@ -43,4 +43,10 @@ def create_app(test_config=None):
     @app.route('/dashboard')
     def dashboard():
         return render_template('admin/dashboard.html')
+        
+    @app.route('/etenders')
+    def etenders():
+        return render_template('admin/etenders.html')
+
+
     return app
