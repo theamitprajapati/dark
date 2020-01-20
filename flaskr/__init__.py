@@ -18,6 +18,14 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
+    from . import db
+    db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
+
+    print('Hello')
+
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
@@ -29,24 +37,14 @@ def create_app(test_config=None):
     def login():
         return render_template('auth/login.html')
 
-        
         # a simple page that says hello
-    @app.route('/forget-password')
-    def forget_password():
-        return render_template('auth/forgot-password.html')
 
-        # a simple page that says hello
-    @app.route('/sing-up')
-    def sing_up():
-        return render_template('auth/sign-up.html')
-        
     @app.route('/dashboard')
     def dashboard():
         return render_template('admin/dashboard.html')
-        
+
     @app.route('/etenders')
     def etenders():
         return render_template('admin/etenders.html')
-
 
     return app
