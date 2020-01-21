@@ -3,6 +3,7 @@
 <div class="mdl-layout mdl-js-layout color--gray is-small-screen login">
     <main class="mdl-layout__content">
         <div class="mdl-card mdl-card__login mdl-shadow--2dp">
+            <form method="POST" action="{{url_for('auth.login')}}">
                 <div class="mdl-card__supporting-text color--dark-gray">
                     <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
@@ -10,31 +11,32 @@
                         </div>
                         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
                             <span class="login-name text-color--white">Sign in</span>
-                            <span class="login-secondary-text text-color--smoke">Enter fields to sign in to DARKBOARD</span>
+                            <span class="login-secondary-text text-color--smoke">Enter fields to sign in to
+                                DARKBOARD</span>
                         </div>
                         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid full-size">
-                                <input class="mdl-textfield__input" type="text" id="e-mail">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid full-size">
+                                <input class="mdl-textfield__input" type="text" id="e-mail" name="username">
                                 <label class="mdl-textfield__label" for="e-mail">Email</label>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid full-size">
-                                <input class="mdl-textfield__input" type="text" id="password">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid full-size">
+                                <input class="mdl-textfield__input" type="text" id="password" name="password">
                                 <label class="mdl-textfield__label" for="password">Password</label>
                             </div>
-                            <a href="{{url_for('auth/forget_password')}}" class="login-link">Forgot password?</a>
+                            <a href="{{url_for('auth.forgot_password')}}" class="login-link">Forgot password?</a>
                         </div>
                         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone submit-cell">
-                            <a href="{{url_for('auth/sing_up')}}" class="login-link">Don't have account?</a>
+                            <a href="{{url_for('auth.register')}}" class="login-link">Don't have account?</a>
                             <div class="mdl-layout-spacer"></div>
-                            <a href="{{url_for('dashboard')}}">
-                                <buttons class="mdl-button mdl-js-button mdl-button--raised color--light-blue">
-                                    SIGN IN
-                                </buttons>
-                            </a>
+                            <input type="submit" class="mdl-button mdl-js-button mdl-button--raised color--light-blue">
+
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
+        </div>
     </main>
 </div>
 {% endblock %}

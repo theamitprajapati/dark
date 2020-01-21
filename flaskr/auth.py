@@ -6,13 +6,8 @@ from flask import (
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from flaskr.db import get_db
-
+import json
 bp = Blueprint('auth', __name__, url_prefix='/auth')
-
-
-@bp.route('/forget-password')
-def forget_password():
-    return render_template('auth/forgot-password.html')
 
 
 @bp.route('/register', methods=('GET', 'POST'))
@@ -27,9 +22,7 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
-        ).fetchone() is not None:
+        elif db['test'].find({name:'amit'}).text is not None:
             error = 'User {} is already registered.'.format(username)
 
         if error is None:
@@ -47,25 +40,28 @@ def register():
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
-    if request.method == 'POST':
+    if request.method == 'POST':        
         username = request.form['username']
         password = request.form['password']
         db = get_db()
-        error = None
-        user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
-        ).fetchone()
+        
+        error = None        
+        users = db['form_f_2017'].find()
+        # for record in users:
+        #     print(record)
 
-        if user is None:
-            error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
-
-        if error is None:
-            session.clear()
-            session['user_id'] = user['id']
-            return redirect(url_for('index'))
+        json.dumps(users)
+        return render_template('test.html',records=users)
+        # if error is None:
+        #     session.clear()
+        #     #session['user_id'] = users['id']
+        #     return redirect(url_for('auth.login'))
 
         flash(error)
 
     return render_template('auth/login.html')
+
+
+@bp.route('/forget-password')
+def forgot_password():
+    return render_template('auth/forget-password.html')

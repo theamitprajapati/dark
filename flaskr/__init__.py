@@ -34,17 +34,8 @@ def create_app(test_config=None):
 
     # a simple page that says hello
     @app.route('/')
-    def login():
-        return render_template('auth/login.html')
-
-        # a simple page that says hello
-
-    @app.route('/dashboard')
-    def dashboard():
-        return render_template('admin/dashboard.html')
-
-    @app.route('/etenders')
-    def etenders():
-        return render_template('admin/etenders.html')
+    def auther():
+        return redirect(('auth/login'))
+        # a simple page that says hello    
 
     return app
