@@ -3224,7 +3224,7 @@ input.mdl-button[type=submit] {
     line-height: normal;
     overflow: hidden;
     transform-origin: 149px 48px;
-    margin: 0
+    margin: 0;
 }
 
 .mdl-card__subtitle-text {
