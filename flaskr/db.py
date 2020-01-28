@@ -16,7 +16,7 @@ def get_db():
     if 'db' not in g:
         client = MongoClient('localhost', 27017)
         # print(client.list_database_names())
-        db = client["xpcpndt"]
+        db = client["darkboard"]
         return db
 
 

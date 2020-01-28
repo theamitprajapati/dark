@@ -48,13 +48,13 @@
         type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
-    <link rel="stylesheet" href="static/css/lib/getmdl-select.min.css">
-    <link rel="stylesheet" href="static/css/lib/nv.d3.min.css">
-    <link rel="stylesheet" href="static/css/application.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/lib/getmdl-select.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/lib/nv.d3.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/application.css') }}">
     <!-- endinject -->
 
 </head>
-
+') }}
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
         <header class="mdl-layout__header">
@@ -370,22 +370,22 @@
     </div>
 
     <!-- inject:js -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="static/js/d3.min.js"></script>
-    <script src="static/js/getmdl-select.min.js"></script>
-    <script src="static/js/material.min.js"></script>
-    <script src="static/js/nv.d3.min.js"></script>
-    <script src="static/js/layout/layout.min.js"></script>
-    <script src="static/js/scroll/scroll.min.js"></script>
-    <script src="static/js/widgets/charts/linePlusBarChart.min.js"></script>
-    <script src="static/js/widgets/charts/discreteBarChart.min.js"></script>
-    <script src="static/js/widgets/charts/stackedBarChart.min.js"></script>
-    <script src="static/js/widgets/employer-form/employer-form.min.js"></script>
-    <script src="static/js/widgets/line-chart/line-charts-nvd3.min.js"></script>
-    <script src="static/js/widgets/map/maps.min.js"></script>
-    <script src="static/js/widgets/pie-chart/pie-charts-nvd3.min.js"></script>
-    <script src="static/js/widgets/table/table.min.js"></script>
-    <script src="static/js/widgets/todo/todo.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static',filename='js/d3.min.js')}}')}}"></script>
+    <script src="{{ url_for('static',filename='js/getmdl-select.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/material.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/nv.d3.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/layout/layout.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/scroll/scroll.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/charts/linePlusBarChart.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/charts/discreteBarChart.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/charts/stackedBarChart.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/employer-form/employer-form.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/line-chart/line-charts-nvd3.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/map/maps.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/pie-chart/pie-charts-nvd3.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/table/table.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/widgets/todo/todo.min.js')}}"></script>
     <!-- endinject -->
 </body>
 </html>

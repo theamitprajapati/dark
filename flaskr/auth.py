@@ -22,7 +22,7 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif db['test'].find({name:'amit'}).text is not None:
+        elif db['test'].find({name: 'amit'}).text is not None:
             error = 'User {} is already registered.'.format(username)
 
         if error is None:
@@ -40,22 +40,14 @@ def register():
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
-    if request.method == 'POST':        
+    if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         db = get_db()
-        
-        error = None        
-        users = db['form_f_2017'].find()
-        # for record in users:
-        #     print(record)
 
-        json.dumps(users)
-        return render_template('test.html',records=users)
-        # if error is None:
-        #     session.clear()
-        #     #session['user_id'] = users['id']
-        #     return redirect(url_for('auth.login'))
+        error = None
+        users = db['form_f_2017'].find()
+        return redirect(url_for('admin.dashboard'))
 
         flash(error)
 

@@ -24,7 +24,8 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
-    print('Hello')
+    from . import admin
+    app.register_blueprint(admin.bp)
 
     # ensure the instance folder exists
     try:
