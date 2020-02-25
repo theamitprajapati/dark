@@ -8,13 +8,18 @@
         </div>
 
         <div class="mdl-card__supporting-text">
-            <form action="#" class="form">
+            <form action="scrap" class="form" method="POST">
                 <div class="form__article">                 
 
                     <div class="mdl-grid">
                         <div
                             class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="url" id="firstName" value="" required/>
+                            <input class="mdl-textfield__input" type="text" id="host" name="host"/>
+                            <label class="mdl-textfield__label" for="firstName">Host</label>
+                        </div>  
+                        <div
+                            class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="url" id="url" name="url" required/>
                             <label class="mdl-textfield__label" for="firstName">Enter URL</label>
                         </div>                      
                     </div>
